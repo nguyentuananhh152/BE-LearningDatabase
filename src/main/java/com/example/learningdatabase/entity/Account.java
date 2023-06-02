@@ -8,7 +8,9 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Account implements Serializable {
+//public class Account implements Serializable {
+
+public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id",  nullable = false, unique = true, length = 5)

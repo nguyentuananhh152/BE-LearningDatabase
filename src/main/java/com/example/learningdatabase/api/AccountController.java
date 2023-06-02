@@ -2,15 +2,14 @@ package com.example.learningdatabase.api;
 
 
 import com.example.learningdatabase.entity.Account;
-import com.example.learningdatabase.repository.AccountRepository;
-import com.example.learningdatabase.service.AccountServiceImplement;
+import com.example.learningdatabase.service.serviceimplement.AccountServiceImplement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
-@Controller("/api")
+@Controller
 public class AccountController {
 
     @Autowired
@@ -24,10 +23,10 @@ public class AccountController {
     }
 
 
-    @GetMapping("/get-account/{id}")
+    @GetMapping("home")
     @ResponseBody
-    public Account get_getAccountByID(@PathVariable("id") int id) {
-        Account acc = accountServiceImplement.getAccountByID(id);
+    public Account get_getAccountByID() {
+        Account acc = accountServiceImplement.getAccountByID(1);
         return acc;
     }
 

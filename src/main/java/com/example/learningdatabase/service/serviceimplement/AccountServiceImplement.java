@@ -1,7 +1,8 @@
-package com.example.learningdatabase.service;
+package com.example.learningdatabase.service.serviceimplement;
 
 import com.example.learningdatabase.entity.Account;
 import com.example.learningdatabase.repository.AccountRepository;
+import com.example.learningdatabase.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import java.util.Collections;
 
 
 @Service
-public class AccountServiceImplement implements AccountService{
+public class AccountServiceImplement implements AccountService {
 
     @Autowired
     private AccountRepository accountRepository;
@@ -58,11 +59,11 @@ public class AccountServiceImplement implements AccountService{
     }
 
     @Override
-    public void updateEmailAccountByID(int id, Account account) {
+    public void updateEmailAccountByID(int id, String email) {
         try {
             if (accountRepository.existsById(id)) {
                 Account acc = accountRepository.findById(id).get();
-                acc.setEmail(account.getEmail());
+                acc.setEmail(email);
                 accountRepository.save(acc);
             }
         } catch (Exception e) {
@@ -88,6 +89,16 @@ public class AccountServiceImplement implements AccountService{
         try {
             if (accountRepository.existsById(id)) {
                 accountRepository.deleteById(id);
+            }
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public void updateIsLoginByID(int id, Boolean b) {
+        try {
+            if (accountRepository.existsById(id)) {
+                accountRepository.findById(id).get().setIsLogin(b);
             }
         } catch (Exception e) {
         }

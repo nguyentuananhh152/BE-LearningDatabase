@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 @Entity
 @Data
-public class Lession {
+public class Lesson {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id",  nullable = false, unique = true, length = 5)
@@ -22,7 +22,7 @@ public class Lession {
 
     private String ListComment;
 
-    public Lession() {
+    public Lesson() {
     }
 
     public int getID() {
