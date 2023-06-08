@@ -7,10 +7,11 @@ import java.util.ArrayList;
 
 @Service
 public interface CourseService {
-    public void saveCourse(Course course);
+    public Course saveCourse(Course course);
     public void updateCourseByID(int id, Course course);
 
     public void deleteCourseByID(int id);
+    public boolean exist(int id);
 
     public Course getCourseByID(int id);
 

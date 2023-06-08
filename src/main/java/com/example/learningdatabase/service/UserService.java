@@ -5,12 +5,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface UserService {
-    public void saveUser(User user);
+    public User saveUser(User user);
 
     // update name, image, age, address, isadmin
     public void updateUserByID(int id, User user);
 
     public void deleteUserByID(int id);
+    public boolean exist(int id);
 
     public User getUserByID(int id);
 

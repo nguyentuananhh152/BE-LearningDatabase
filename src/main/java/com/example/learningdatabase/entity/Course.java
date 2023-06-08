@@ -18,12 +18,12 @@ public class Course {
 
     private String Description;
 
-    private String ListLession;
+    private String ListLesson;
 
     public Course() {
     }
 
-    public int getID() {
+    public int getId() {
         return ID;
     }
 
@@ -43,35 +43,35 @@ public class Course {
         Description = description;
     }
 
-    public String getListLession() {
-        return ListLession;
+    public String getListLesson() {
+        return ListLesson;
     }
 
-    public void addLession(int idLession) {
-        this.ListLession  = ListLession.replace("]","");
-        this.ListLession += "," + idLession + "]";
+    public void addLesson(int idLesson) {
+        this.ListLesson  = ListLesson.replace("]","");
+        this.ListLesson += "," + idLesson + "]";
     }
 
-    public void replaceLession(int idLession, int idNewLession) {
-        ArrayList<Integer> list = stringToList(ListLession);
+    public void replaceLesson(int idLesson, int idNewLesson) {
+        ArrayList<Integer> list = stringToList(ListLesson);
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) == idLession) {
-                list.set(i, idNewLession);
+            if (list.get(i) == idLesson) {
+                list.set(i, idNewLesson);
             }
         }
     }
 
-    public void removeLession(int idLession) {
-        ArrayList<Integer> list = stringToList(ListLession);
+    public void removeLesson(int idLesson) {
+        ArrayList<Integer> list = stringToList(ListLesson);
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) == idLession) {
+            if (list.get(i) == idLesson) {
                 list.remove(i);
             }
         }
     }
 
-    public Boolean isEmptyLession() {
-        if(this.stringToList(ListLession).isEmpty()) {
+    public Boolean isEmptyLesson() {
+        if(this.stringToList(ListLesson).isEmpty()) {
             return true;
         } else {
             return false;

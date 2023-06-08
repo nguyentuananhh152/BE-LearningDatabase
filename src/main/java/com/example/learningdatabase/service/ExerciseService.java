@@ -7,10 +7,11 @@ import java.util.ArrayList;
 
 @Service
 public interface ExerciseService {
-    public void saveExercise(Exercise exercise);
+    public Exercise saveExercise(Exercise exercise);
     public void updateExerciseByID(int id, Exercise exercise);
 
     public void deleteExerciseByID(int id);
+    public boolean exist(int id);
 
     public Exercise getExerciseByID(int id);
 

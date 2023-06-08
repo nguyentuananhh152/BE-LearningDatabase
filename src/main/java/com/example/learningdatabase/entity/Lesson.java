@@ -25,7 +25,7 @@ public class Lesson {
     public Lesson() {
     }
 
-    public int getID() {
+    public int getId() {
         return ID;
     }
 

@@ -18,7 +18,7 @@ public class Exercise {
     public Exercise() {
     }
 
-    public int getID() {
+    public int getId() {
         return ID;
     }
 

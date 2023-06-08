@@ -15,7 +15,7 @@ public class Notification {
     public Notification() {
     }
 
-    public int getID() {
+    public int getId() {
         return this.ID;
     }
 

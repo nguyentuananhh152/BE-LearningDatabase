@@ -7,9 +7,10 @@ import java.util.ArrayList;
 
 @Service
 public interface NotificationService {
-    public void saveNotification(Notification notification);
+    public Notification saveNotification(Notification notification);
 
     public void deleteNotificationByID(int id);
+    public boolean exist(int id);
 
     public Notification getNotificationByID(int id);
 

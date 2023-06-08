@@ -17,7 +17,7 @@ public class Student {
 
     private String ListCourseRegistered;
 
-    private String ListLessionLearned;
+    private String ListLessonLearned;
 
     private String ListExerciseDone;
 
@@ -36,12 +36,12 @@ public class Student {
         ListCourseRegistered = listCourseRegistered;
     }
 
-    public String getListLessionLearned() {
-        return ListLessionLearned;
+    public String getListLessonLearned() {
+        return ListLessonLearned;
     }
 
-    public void setListLessionLearned(String listLessionLearned) {
-        ListLessionLearned = listLessionLearned;
+    public void setListLessonLearned(String listLessonLearned) {
+        ListLessonLearned = listLessonLearned;
     }
 
     public String getListExerciseDone() {

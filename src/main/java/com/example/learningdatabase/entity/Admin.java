@@ -13,7 +13,7 @@ public class Admin {
     public Admin() {
     }
 
-    public int getID() {
+    public int getId() {
         return ID;
     }
 
