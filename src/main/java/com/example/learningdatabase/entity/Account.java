@@ -8,19 +8,17 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-//public class Account implements Serializable {
-
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id",  nullable = false, unique = true, length = 5)
     private int ID;
 
-    @Column (name = "username", nullable = false, length = 50)
-    private String UserName;
+    @Column (name = "username", nullable = false, unique = true, length = 50)
+    private String userName;
 
     @Column (name = "password", nullable = false, length = 50)
-    private String PassWord;
+    private String passWord;
 
 //    @OneToOne(cascade = CascadeType.PERSIST)
 //    @NotFound(action = NotFoundAction.IGNORE)
@@ -41,12 +39,12 @@ public class Account {
     }
 
     public String getUsername() {
-        return UserName;
+        return userName;
     }
 
 
     public void setPassword(String password) {
-        this.PassWord = password;
+        this.passWord = password;
     }
 
     public int getUserid() {

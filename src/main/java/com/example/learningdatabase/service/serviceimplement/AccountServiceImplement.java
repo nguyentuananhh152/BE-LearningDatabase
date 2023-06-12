@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 
 @Service
@@ -179,6 +180,13 @@ public class AccountServiceImplement implements AccountService {
 //        }
     }
 
+    @Override
+    public void logOut(int idAccount) {
+        try {
+            accountRepository.findById(idAccount).get().setIsLogin(false);
+        } catch(Exception e) {
+        }
+    }
 
     @Override
     public boolean register(String username, String password, String email) {
@@ -201,4 +209,5 @@ public class AccountServiceImplement implements AccountService {
             return false;
 //        }
     }
+
 }

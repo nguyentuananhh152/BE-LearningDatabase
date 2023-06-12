@@ -18,8 +18,7 @@ public class StudentServiceImplement implements StudentService {
     public Student saveStudent(Student student) {
         try {
             if (!studentRepository.existsById(student.getId())) {
-                studentRepository.save(student);
-                return student;
+                return studentRepository.save(student);
             } else {
                 return null;
             }

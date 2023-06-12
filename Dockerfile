@@ -13,3 +13,6 @@ COPY --from=build /target/learningdatabase-0.0.1-SNAPSHOT.jar learningdatabase.j
 # ENV PORT=8080
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","learningdatabase.jar"]
+
+# docker build:
+# docker run:

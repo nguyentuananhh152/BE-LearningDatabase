@@ -15,8 +15,7 @@ public class UserServiceImplement implements UserService {
     public User saveUser(User user) {
         try {
             if (!userRepository.existsById(user.getId())) {
-                userRepository.save(user);
-                return user;
+                return userRepository.save(user);
             } else {
                 return null;
             }

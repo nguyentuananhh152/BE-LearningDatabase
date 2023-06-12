@@ -12,19 +12,23 @@ import java.util.ArrayList;
 @Service
 public interface AccountService {
     public Account saveAccount(Account account);
-    public Account getAccountByID(int id);
-    public ArrayList<Account> getAllListAccount();
+
 
     public void updateEmailAccountByID(int id, String email);
     public void changePassword(int id, String oldPass, String newPass);
     public void deleteAccountByID(int id);
     public boolean exist(int id);
 
+    public Account getAccountByID(int id);
+    public ArrayList<Account> getAllListAccount();
+
     public void updateIsLoginByID(int id, Boolean b);
 
     public StudentDTO loginStudent(String username, String password);
 
     public AdminDTO loginAdmin(String username, String password);
+
+    public void logOut(int idAccount);
 
     public boolean register(String username, String password, String email);
 

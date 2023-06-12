@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @org.springframework.stereotype.Controller
 public class Controller {
@@ -30,39 +31,27 @@ public class Controller {
 
     @RequestMapping("/")
     public String home(Model model) {
-        return "home.html";
+        return "Welcome to web service of group 3 CNPM";
     }
 
 
     @GetMapping("/home")
     @ResponseBody
     public String get_getAccountByID() {
-        return "Welcome";
+        return "home.html";
+
     }
 
-
-    @GetMapping("/admin/login")
-    @ResponseBody
-    public AdminDTO get_loginAdmin(@PathVariable("username") String username, @PathVariable("password") String password) {
-        return accountServiceImplement.loginAdmin(username, password);
-    }
-
-    @GetMapping("/user/login")
-    @ResponseBody
-    public StudentDTO get_loginStudent(@PathVariable("username") String username, @PathVariable("password") String password) {
-        return accountServiceImplement.loginStudent(username, password);
-    }
 
     @GetMapping("/test/insert")
     public void get_insertUser() {
         User user = new User();
         user.setId(5);
-        user.setNumberStudentID(1);
+        user.setIsAdmin(false);
+        Student student = studentServiceImplement.saveStudent(new Student());
+        user.setNumberStudentID(student.getId());
         userServiceImplement.saveUser(new User());
 
-        Student student = new Student();
-        student.setId(1);
-        studentServiceImplement.saveStudent(student);
 
     }
     @DeleteMapping("/delete-account/{id}")
@@ -82,7 +71,7 @@ public class Controller {
     }
 
     @PostMapping("/create-account")
-    public void post_createAccount(@Param("username") String username, @Param("password") String password, @Param("email") String email) {
+    public void post_createAccount(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("email") String email) {
         Account acc = new Account();
         acc.setUserName(username);
         acc.setPassword(password);
@@ -91,4 +80,16 @@ public class Controller {
         acc.setIsLogin(false);
         accountServiceImplement.saveAccount(acc);
     }
+
+    @GetMapping("/get-all-account")
+    @ResponseBody
+    public ArrayList<Account> getlistaccount() {
+        return accountServiceImplement.getAllListAccount();
+    }
+
+//    @GetMapping("/test-find-id-by-username")
+//    public void ptest() {
+//        List<Account> acc = accountServiceImplement.findIDAccountByUsername("hahah");
+//        acc.forEach(a -> System.out.println(a));
+//    }
 }
