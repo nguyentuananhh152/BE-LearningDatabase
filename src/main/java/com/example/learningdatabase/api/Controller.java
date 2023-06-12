@@ -2,17 +2,12 @@ package com.example.learningdatabase.api;
 
 
 import com.example.learningdatabase.entity.Account;
-import com.example.learningdatabase.entity.Admin;
 import com.example.learningdatabase.entity.Student;
 import com.example.learningdatabase.entity.User;
-import com.example.learningdatabase.entityDTO.AdminDTO;
-import com.example.learningdatabase.entityDTO.StudentDTO;
-import com.example.learningdatabase.repository.AccountRepository;
-import com.example.learningdatabase.service.serviceimplement.AccountServiceImplement;
-import com.example.learningdatabase.service.serviceimplement.AdminServiceImplement;
-import com.example.learningdatabase.service.serviceimplement.StudentServiceImplement;
-import com.example.learningdatabase.service.serviceimplement.UserServiceImplement;
+import com.example.learningdatabase.entityDTO.*;
+import com.example.learningdatabase.service.serviceimplement.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -75,8 +70,6 @@ public class Controller {
         accountServiceImplement.deleteAccountByID(id);
     }
 
-    @Autowired
-    private AccountRepository accountRepository;
     @GetMapping("/create-account-default")
     public void post_createAccountDefault() {
         Account acc = new Account();
@@ -86,11 +79,10 @@ public class Controller {
         acc.setEmail("email@gmail.com");
         acc.setIsLogin(false);
         accountServiceImplement.saveAccount(acc);
-//        accountRepository.save(acc);
     }
 
-    @PostMapping("/create-account/username={username}/password={password}/email={email}")
-    public void post_createAccount(@PathVariable("username") String username, @PathVariable("password") String password, @PathVariable("email") String email) {
+    @PostMapping("/create-account")
+    public void post_createAccount(@Param("username") String username, @Param("password") String password, @Param("email") String email) {
         Account acc = new Account();
         acc.setUserName(username);
         acc.setPassword(password);
@@ -98,6 +90,5 @@ public class Controller {
         acc.setEmail(email);
         acc.setIsLogin(false);
         accountServiceImplement.saveAccount(acc);
-//        accountRepository.save(acc);
     }
 }
