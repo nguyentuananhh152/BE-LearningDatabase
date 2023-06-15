@@ -11,10 +11,26 @@
         <table border="1px">
             <tr>
                 <td>
-                    Get Account By ID (replace ID by number)
+                    Sign up account default
                 </td>
                 <td>
-                    /api/get-account/id
+                    /create-account-default
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Sign up account with username and password and email
+                </td>
+                <td>
+                    /create-account?username=...&password=...&email=...
+                </td>
+            </tr>
+            </tr><tr>
+                <td>
+                    Delete Account by ID (replace {id} by number)
+                </td>
+                <td>
+                    /delete-account/{id}
                 </td>
             </tr>
             <tr>
@@ -22,31 +38,65 @@
                     Get All List Account
                 </td>
                 <td>
-                    /api/get-all-list-account/
+                    /get-all-account
+                </td>
+            </tr>
+        </table>
+    </div>
+    </br>
+    <div>
+        <table border="1px">
+            <tr>
+                <td>
+                    Get course by ID
+                </td>
+                <td>
+                    /get-course?id=...
                 </td>
             </tr>
             <tr>
                 <td>
-                    Delete Account By ID (replace ID by number)
+                    Get all list course
                 </td>
                 <td>
-                    /api/delete-account/id
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Create Account Default (test)
-                </td>
-                <td>
-                    /api/create-account-default/
+                    /get-all-list-course
                 </td>
             </tr>
             <tr>
                 <td>
-                    Create Account With Data
+                    Get my list Course by ID Student
                 </td>
                 <td>
-                    /api/create-account/username=.../password=.../email=...
+                    /my-list-course?id...  (id student)
+                </td>
+            </tr>
+        </table>
+    </div>
+    </br>
+    <div>
+        <table border="1px">
+            <tr>
+                <td>
+                    Get lesson by ID
+                </td>
+                <td>
+                    /get-lesson?id=...
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Get list lesson by ID Course
+                </td>
+                <td>
+                    /get-list-lesson?id=...   (id course)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Get my list Lesson by ID Student
+                </td>
+                <td>
+                    /my-list-lesson?id=...    (id student)
                 </td>
             </tr>
         </table>

@@ -29,12 +29,11 @@ public class HomeController {
 
     public HomeController() {}
 
-    @RequestMapping("/home")
-    @ResponseBody
+    @RequestMapping("/")
     public String home(Model model,
                        HttpServletRequest request,
                        HttpServletResponse response) {
-        return "";
+        return "home.html";
     }
 
 
@@ -44,7 +43,7 @@ public class HomeController {
 //    }
 
 
-    @GetMapping("/")
+    @GetMapping("/studentDTO")
     @ResponseBody
     public StudentDTO test() {
         Account testAcc = accountServiceImplement.getAccountByID(5);
