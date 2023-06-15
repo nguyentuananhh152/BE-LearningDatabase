@@ -18,7 +18,7 @@ public class Course {
 
     private String Description;
 
-    private String ListLesson;
+    private String ListLesson = "[]";
 
     public Course() {
     }
@@ -63,9 +63,11 @@ public class Course {
 
     public void removeLesson(int idLesson) {
         ArrayList<Integer> list = stringToList(ListLesson);
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) == idLesson) {
-                list.remove(i);
+        if (!isEmptyLesson()) {
+            for (int i = 0; i < list.size(); i++) {
+                if (list.get(i) == idLesson) {
+                    list.remove(i);
+                }
             }
         }
     }
@@ -83,5 +85,13 @@ public class Course {
         ArrayList<Integer> myList = new ArrayList<Integer>(Arrays.asList(replace1.split(",")).stream().map(s -> Integer.parseInt(s.trim())).collect(Collectors.toList()));
         System.out.println(myList.toString());
         return myList;
+    }
+
+    public boolean containerLesson(int idLesson) {
+        ArrayList<Integer> arrayList = stringToList(getListLesson());
+        if (!arrayList.isEmpty() && arrayList.contains(idLesson)) {
+            return true;
+        }
+        return false;
     }
 }

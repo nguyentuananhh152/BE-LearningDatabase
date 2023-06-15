@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 @Entity
 @Data
+@Table(name = "lesson")
 public class Lesson {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,9 +19,9 @@ public class Lesson {
 
     private String Content;
 
-    private String ListExercise;
+    private String ListExercise = "[]";
 
-    private String ListComment;
+    private String ListComment = "[]";
 
     public Lesson() {
     }
@@ -82,6 +83,9 @@ public class Lesson {
         ListComment += "," + id + "]";
     }
 
+    public void setComment(String listComment) {
+        this.ListComment = listComment;
+    }
     public void removeComment(int id) {
         ArrayList<Integer> list = stringToList(ListComment);
         for (int i = 0; i < list.size(); i++) {

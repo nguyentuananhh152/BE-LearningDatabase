@@ -15,11 +15,11 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String ListCourseRegistered;
+    private String ListCourseRegistered = "[]";
 
-    private String ListLessonLearned;
+    private String ListLessonLearned = "[]";
 
-    private String ListExerciseDone;
+    private String ListExerciseDone = "[]";
 
     public Student() {
     }
@@ -32,24 +32,27 @@ public class Student {
         return ListCourseRegistered;
     }
 
-    public void setListCourseRegistered(String listCourseRegistered) {
-        ListCourseRegistered = listCourseRegistered;
+    public void setListCourseRegistered(int idCourse) {
+        this.ListCourseRegistered  = ListCourseRegistered.replace("]","");
+        this.ListCourseRegistered += "," + idCourse + "]";
     }
 
     public String getListLessonLearned() {
         return ListLessonLearned;
     }
 
-    public void setListLessonLearned(String listLessonLearned) {
-        ListLessonLearned = listLessonLearned;
+    public void setListLessonLearned(int idLesson) {
+        this.ListLessonLearned = ListLessonLearned.replace("]", "");
+        this.ListLessonLearned += "," + idLesson + "]";
     }
 
     public String getListExerciseDone() {
         return ListExerciseDone;
     }
 
-    public void setListExerciseDone(String listExerciseDone) {
-        ListExerciseDone = listExerciseDone;
+    public void setListExerciseDone(int idExercise) {
+        this.ListExerciseDone = ListExerciseDone.replace("]", "");
+        this.ListExerciseDone += "," + idExercise + "]";
     }
 
     public ArrayList<Integer> stringToList(String str) {

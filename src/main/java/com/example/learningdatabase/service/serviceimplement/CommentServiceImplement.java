@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class CommentServiceImplement implements CommentService {
@@ -86,16 +87,31 @@ public class CommentServiceImplement implements CommentService {
 
     @Override
     public ArrayList<Comment> getListComment(ArrayList<Integer> listID) {
-        ArrayList<Comment> arr = new ArrayList<>();
+//        ArrayList<Comment> arr = new ArrayList<>();
+//        try {
+//            for(int i : listID) {
+//                if (commentRepository.existsById(listID.get(i))) {
+//                    arr.add(commentRepository.findById(listID.get(i)).get());
+//                }
+//            }
+//        } catch (Exception e) {
+//        } finally {
+//            return arr;
+//        }
+//    }
         try {
-            for(int i : listID) {
-                if (commentRepository.existsById(listID.get(i))) {
-                    arr.add(commentRepository.findById(listID.get(i)).get());
+            List<Comment> commentList = commentRepository.findAllById(listID);
+            if (!commentList.isEmpty()) {
+                ArrayList<Comment> commentArrayList = new ArrayList<>();
+                for (Comment c : commentList) {
+                    commentArrayList.add(c);
                 }
+                return commentArrayList;
+            } else {
+                return null;
             }
         } catch (Exception e) {
-        } finally {
-            return arr;
+            return null;
         }
     }
 }

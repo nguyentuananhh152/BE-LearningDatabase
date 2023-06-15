@@ -14,15 +14,15 @@ public class User {
 
     private int numberAdminID;
 
-    private String Name;
+    private String Name = "";
 
-    private String Image;
+    private String Image = "";
 
     private int numberAge;
 
-    private String Address;
+    private String Address = "";
 
-    private Boolean IsAdmin;
+    private Boolean IsAdmin = false;
 
     public User() {}
 

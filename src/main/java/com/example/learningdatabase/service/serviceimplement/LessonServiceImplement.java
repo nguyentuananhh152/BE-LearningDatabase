@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class LessonServiceImplement implements LessonService {
@@ -27,13 +28,26 @@ public class LessonServiceImplement implements LessonService {
     }
 
     @Override
-    public void updateLessonByID(int id, Lesson lession) {
-
+    public void updateLessonByID(int id, Lesson lesson) {
+        try {
+            if (exist(id)) {
+                Lesson lessonUpdate = lessonRepository.findById(id).get();
+                lessonUpdate.setContent(lesson.getContent());
+                lessonUpdate.setName(lesson.getName());
+                lessonUpdate.setListComment(lesson.getListComment());
+                lessonUpdate.setListExercise(lesson.getListExercise());
+                lessonRepository.saveAndFlush(lessonUpdate);
+            }
+        } catch (Exception e) {}
     }
 
     @Override
     public void deleteLessonByID(int id) {
-
+        try {
+            if (exist(id)) {
+                lessonRepository.deleteById(id);
+            }
+        } catch (Exception e) {}
     }
 
     @Override
@@ -47,11 +61,32 @@ public class LessonServiceImplement implements LessonService {
 
     @Override
     public Lesson getLessonByID(int id) {
-        return null;
+        try {
+            if (exist(id)) {
+                return lessonRepository.findById(id).get();
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
     public ArrayList<Lesson> getListLesson(ArrayList<Integer> listID) {
-        return null;
+        try {
+            List<Lesson> lessonList = lessonRepository.findAllById(listID);
+            if (!lessonList.isEmpty()) {
+                ArrayList<Lesson> lessonArrayList= new ArrayList<>();
+                for (Lesson l : lessonList) {
+                    lessonArrayList.add(l);
+                }
+                return lessonArrayList;
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
+            return null;
+        }
     }
 }

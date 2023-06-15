@@ -12,15 +12,15 @@ public interface StudentService {
     public void deleteStudentByID(int id);
     public boolean exist(int id);
 
-    public ArrayList<Integer> getListCourseRegistered();
+    public ArrayList<Integer> getListCourseRegistered(int idStudent);
 
-    public ArrayList<Integer> getListLessonLearned();
+    public ArrayList<Integer> getListLessonLearned(int idStudent);
 
-    public ArrayList<Integer> getListLessonLearnedByCourse(int idCourse);
+//    public ArrayList<Integer> getListLessonLearnedByCourse(int idStudent, int idCourse);
 
-    public void registerCourse(int id);
+    public void registerCourse(int idStudent, int idCourse);
 
-    public void addLessonLearned(int id);
+    public void addLessonLearned(int idStudent,int idLesson);
 
     public Student getStudentByID(int id);
 }

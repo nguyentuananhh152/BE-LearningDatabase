@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public interface LessonService {
     public Lesson saveLesson(Lesson lession);
 
-    public void updateLessonByID(int id, Lesson lession);
+    public void updateLessonByID(int id, Lesson lesson);
 
     public void deleteLessonByID(int id);
     public boolean exist(int id);

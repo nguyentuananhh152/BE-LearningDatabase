@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class ExerciseServiceImplement implements ExerciseService {
@@ -29,12 +30,24 @@ public class ExerciseServiceImplement implements ExerciseService {
 
     @Override
     public void updateExerciseByID(int id, Exercise exercise) {
-
+        try {
+            if (exist(id)) {
+                Exercise exUpdate = exerciseRepository.findById(id).get();
+                exUpdate.setName(exercise.getName());
+                exUpdate.setContent(exercise.getContent());
+                exUpdate.setAnswer(exercise.getAnswer());
+                exerciseRepository.saveAndFlush(exUpdate);
+            }
+        } catch (Exception e) {}
     }
 
     @Override
     public void deleteExerciseByID(int id) {
-
+        try {
+            if (exist(id)) {
+                exerciseRepository.deleteById(id);
+            }
+        } catch (Exception e) {}
     }
 
     @Override
@@ -48,11 +61,32 @@ public class ExerciseServiceImplement implements ExerciseService {
 
     @Override
     public Exercise getExerciseByID(int id) {
-        return null;
+        try {
+            if (exist(id)) {
+                return exerciseRepository.findById(id).get();
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
     public ArrayList<Exercise> getListExercise(ArrayList<Integer> listID) {
-        return null;
+        try {
+            List<Exercise> exerciseList = exerciseRepository.findAllById(listID);
+            if (!exerciseList.isEmpty()) {
+                ArrayList<Exercise> exerciseArrayList = new ArrayList<>();
+                for (Exercise ex : exerciseList) {
+                    exerciseArrayList.add(ex);
+                }
+                return exerciseArrayList;
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
+            return null;
+        }
     }
 }

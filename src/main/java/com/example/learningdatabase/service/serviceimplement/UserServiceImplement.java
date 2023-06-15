@@ -26,12 +26,27 @@ public class UserServiceImplement implements UserService {
 
     @Override
     public void updateUserByID(int id, User user) {
-
+        // update name, image,age, address
+        try {
+            if (exist(id)) {
+                User userUpdate = userRepository.findById(id).get();
+                userUpdate.setName(user.getName());
+                userUpdate.setImage(user.getImage());
+                userUpdate.setNumberAge(user.getNumberAge());
+                userUpdate.setAddress(user.getAddress());
+                userRepository.saveAndFlush(userUpdate);
+            }
+        } catch (Exception e) {}
     }
 
     @Override
     public void deleteUserByID(int id) {
-
+        try {
+            if (exist(id)) {
+                userRepository.deleteById(id);
+            }
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -45,6 +60,14 @@ public class UserServiceImplement implements UserService {
 
     @Override
     public User getUserByID(int id) {
-        return null;
+        try {
+            if (exist(id)) {
+                return userRepository.findById(id).get();
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
+            return null;
+        }
     }
 }

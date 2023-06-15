@@ -4,18 +4,18 @@ package com.example.learningdatabase.api;
 import com.example.learningdatabase.entity.Account;
 import com.example.learningdatabase.entity.Student;
 import com.example.learningdatabase.entity.User;
-import com.example.learningdatabase.entityDTO.*;
+import com.example.learningdatabase.entityDTO.StudentDTO;
 import com.example.learningdatabase.service.serviceimplement.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
-import java.util.List;
 
 @org.springframework.stereotype.Controller
-public class Controller {
+public class HomeController {
 
     @Autowired
     private AccountServiceImplement accountServiceImplement;
@@ -27,32 +27,41 @@ public class Controller {
     @Autowired
     StudentServiceImplement studentServiceImplement;
 
-    public Controller() {}
+    public HomeController() {}
 
-    @RequestMapping("/")
-    public String home(Model model) {
-        return "Welcome to web service of group 3 CNPM";
-    }
-
-
-    @GetMapping("/home")
+    @RequestMapping("/home")
     @ResponseBody
-    public String get_getAccountByID() {
-        return "home.html";
-
+    public String home(Model model,
+                       HttpServletRequest request,
+                       HttpServletResponse response) {
+        return "";
     }
 
 
-    @GetMapping("/test/insert")
+//    @GetMapping("/")
+//    public String get_getAccountByID() {
+//        return "home.html";
+//    }
+
+
+    @GetMapping("/")
+    @ResponseBody
+    public StudentDTO test() {
+        Account testAcc = accountServiceImplement.getAccountByID(5);
+        User testUser = userServiceImplement.getUserByID(3);
+        Student student = studentServiceImplement.getStudentByID(3);
+        return new StudentDTO(testAcc, testUser, student);
+    }
+
+    @RequestMapping("/test/insert")
     public void get_insertUser() {
         User user = new User();
         user.setId(5);
         user.setIsAdmin(false);
-        Student student = studentServiceImplement.saveStudent(new Student());
+        Student student = new Student();
+        studentServiceImplement.saveStudent(student);
         user.setNumberStudentID(student.getId());
-        userServiceImplement.saveUser(new User());
-
-
+        userServiceImplement.saveUser(user);
     }
     @DeleteMapping("/delete-account/{id}")
     public void delete_deleteAccountByID(@PathVariable("id") int id) {
