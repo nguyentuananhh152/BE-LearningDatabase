@@ -8,6 +8,7 @@ import com.example.learningdatabase.service.serviceimplement.LessonServiceImplem
 import com.example.learningdatabase.service.serviceimplement.StudentServiceImplement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -15,6 +16,7 @@ import javax.websocket.server.PathParam;
 import java.util.ArrayList;
 
 @Controller
+@CrossOrigin
 public class LessonController {
     @Autowired
     private LessonServiceImplement lessonServiceImplement;

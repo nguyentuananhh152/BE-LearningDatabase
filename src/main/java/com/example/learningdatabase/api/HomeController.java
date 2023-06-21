@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 
 @org.springframework.stereotype.Controller
+@CrossOrigin
 public class HomeController {
 
     @Autowired

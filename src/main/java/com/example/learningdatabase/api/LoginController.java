@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
+@CrossOrigin
 @SessionAttributes("studentDTO")
 public class LoginController {
     @ModelAttribute("studentDTO")
