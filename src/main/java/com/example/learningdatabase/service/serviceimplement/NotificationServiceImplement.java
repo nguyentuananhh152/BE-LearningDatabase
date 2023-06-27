@@ -33,7 +33,7 @@ public class NotificationServiceImplement implements NotificationService {
         try {
             if (exist(id)) {
                 notificationRepository.deleteById(id);
-            }
+            } else {}
         } catch (Exception e) {}
     }
 

@@ -6,15 +6,19 @@
     - Login (admin): /admin/login?username=...&password=...
 
     - Sign up account (test):
-        + /create-account-default
-        + /create-account?username=...&password=...&email=...
+        +(POST) /create-account-default
+        +(POST) /create-account?username=...&password=...&email=...
 
     - course
-        + /get-course?id=...
-        + /get-all-list-course
-        + /my-list-course?id...  (id student)
+        +(GET) /get-course?id=...
+        +(GET) /get-all-list-course
+        +(GET) /my-list-course?id...  (id student)
 
     - Lesson
-        + /get-lesson?id=...
-        + /get-list-lesson?id=...   (id course)
-        + /my-list-lesson?id=...    (id student)
+        +(GET) /get-lesson?id=...
+        +(GET) /get-list-lesson?id=...   (id course)
+        +(GET) /my-list-lesson?id=...    (id student)
+
+    - Notification
+        + (GET) /get/notifications
+        + (GET) /get/notification?id
