@@ -115,11 +115,8 @@ public class LoginController {
             for (Account acc : accountArrayList) {
                 if (acc.login(username, password)) {
                     numberID = acc.getId();
-                    acc.setIsLogin(true);
                     System.out.println("Input: username = " + username + " & pasword = " + password);
                     System.out.print("Login success! - ");
-                    accountServiceImplement.saveAccount(acc);
-
                     User user = userServiceImplement.getUserByID(acc.getUserid());
                     if (!user.getIsAdmin()) {
                         System.out.println("Is student");
