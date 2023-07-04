@@ -3,21 +3,47 @@ package com.example.learningdatabase;
 import com.example.learningdatabase.entity.User;
 import com.example.learningdatabase.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Random;
 
 @SpringBootApplication
 @EnableJpaRepositories
 public class LearningDatabaseApplication {
+
+	private static ConfigurableApplicationContext context;
 	public static void main(String[] args) {
-		SpringApplication.run(LearningDatabaseApplication.class, args);
+		context = SpringApplication.run(LearningDatabaseApplication.class, args);
 //		insert_data();
+	}
+	public static void restart() {
+		ApplicationArguments args = context.getBean(ApplicationArguments.class);
+
+		Thread thread = new Thread(() -> {
+			context.close();
+			context = SpringApplication.run(LearningDatabaseApplication.class, args.getSourceArgs());
+		});
+
+		thread.setDaemon(false);
+		thread.start();
+	}
+
+	public static void checkConnectJDBS(Connection connection) throws SQLException
+	{
+		if (connection != null && !connection.isClosed()) {
+			// run sql statements
+		} else {
+			restart();
+		}
 	}
 
 //	public static String random(int n) {

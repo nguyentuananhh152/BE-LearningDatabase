@@ -59,7 +59,6 @@ public class Student {
         String replace = str.replace("[","");
         String replace1 = replace.replace("]","");
         ArrayList<Integer> myList = new ArrayList<Integer>(Arrays.asList(replace1.split(",")).stream().map(s -> Integer.parseInt(s.trim())).collect(Collectors.toList()));
-        System.out.println(myList.toString());
         return myList;
     }
 }

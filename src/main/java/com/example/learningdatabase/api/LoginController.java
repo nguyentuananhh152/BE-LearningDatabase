@@ -1,6 +1,7 @@
 package com.example.learningdatabase.api;
 
 
+import com.example.learningdatabase.LearningDatabaseApplication;
 import com.example.learningdatabase.entity.Account;
 import com.example.learningdatabase.entity.Admin;
 import com.example.learningdatabase.entity.Student;
@@ -27,6 +28,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.websocket.server.PathParam;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 @Controller
 @CrossOrigin
@@ -36,6 +38,10 @@ public class LoginController {
 //    public StudentDTO studentDTO() {
 //        return new StudentDTO();
 //    }
+
+    public void checkDatabase() {
+
+    }
     @Autowired
     private AccountServiceImplement accountServiceImplement;
 
@@ -49,17 +55,28 @@ public class LoginController {
     private AdminServiceImplement adminServiceImplement;
 
     private ArrayList<Account> accountArrayList;
-    private ArrayList<StudentDTO> studentDTOArrayList;
+
+    private int numberID;
 
     @Bean
     public void createData() {
-        accountArrayList = accountServiceImplement.getAllListAccount();
+        try {
+            accountArrayList = accountServiceImplement.getAllListAccount();
+        } catch (Exception e) {}
     }
     @GetMapping("/admin/login")
     @ResponseBody
     public AdminDTO post_loginAdmin(@RequestParam("username") String username, @RequestParam("password") String password) {
         try {
             AdminDTO adminDTO;
+            if (accountArrayList == null) {
+                System.out.println("Array is empty. Restarting server");
+                for (int i = 3; i < 1; i--) {
+                    System.out.println("Server will restart after: " + i + "s");
+                    TimeUnit.SECONDS.sleep(1);
+                }
+                LearningDatabaseApplication.restart();
+            }
             for (Account acc : accountArrayList) {
                 System.out.println("Input: username = " + username + " & pasword = " + password);
                 if (acc.login(username, password)) {
@@ -87,10 +104,22 @@ public class LoginController {
     public StudentDTO post_loginStudent(@RequestParam("username") String username, @RequestParam("password") String password) {
         try {
             StudentDTO studentDTO;
+            if (accountArrayList == null) {
+                System.out.println("Array is empty. Restarting server !!!");
+                for (int i = 3; i < 1; i--) {
+                    System.out.println("Server will restart after: " + i + "s");
+                    TimeUnit.SECONDS.sleep(1);
+                }
+                LearningDatabaseApplication.restart();
+            }
             for (Account acc : accountArrayList) {
                 if (acc.login(username, password)) {
+                    numberID = acc.getId();
+                    acc.setIsLogin(true);
                     System.out.println("Input: username = " + username + " & pasword = " + password);
                     System.out.print("Login success! - ");
+                    accountServiceImplement.saveAccount(acc);
+
                     User user = userServiceImplement.getUserByID(acc.getUserid());
                     if (!user.getIsAdmin()) {
                         System.out.println("Is student");
