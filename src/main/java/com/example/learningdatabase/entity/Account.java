@@ -34,6 +34,10 @@ public class Account {
     @Column (name = "isLogin", nullable = false)
     private Boolean IsLogin;
 
+    public Account(String userName, String passWord) {
+        this.userName = userName;
+        this.passWord = passWord;
+    }
     public int getId() {
         return ID;
     }
@@ -42,6 +46,9 @@ public class Account {
         return userName;
     }
 
+    public String getPassWord() {
+        return passWord;
+    }
 
     public void setPassword(String password) {
         this.passWord = password;
@@ -67,6 +74,12 @@ public class Account {
         this.IsLogin = isLogin;
     }
 
+    public boolean login(String userName, String passWord) {
+        if (this.userName.equals(userName) && this.passWord.equals(passWord)) {
+            return true;
+        }
+        return false;
+    }
     @PrePersist()
     private void preInsert() {
 
