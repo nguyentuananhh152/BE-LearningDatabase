@@ -7,7 +7,7 @@
 
     - Sign up account (test):
         +(POST) /create-account-default
-        +(POST) /create-account?username=...&password=...&email=...
+        +(POST) /create-account?username=...&password=...&email=...&name=..&age=...&address=...
 
     - course
         +(GET) /get-course?id=...
@@ -18,6 +18,7 @@
         +(GET) /get-lesson?id=...
         +(GET) /get-list-lesson?id=...   (id course)
         +(GET) /my-list-lesson?id=...    (id student)
+        +(GET) /get-all-lesson
 
     - Notification
         + (GET) /get/notifications

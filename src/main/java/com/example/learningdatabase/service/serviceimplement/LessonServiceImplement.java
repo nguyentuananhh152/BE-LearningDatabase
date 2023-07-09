@@ -89,4 +89,22 @@ public class LessonServiceImplement implements LessonService {
             return null;
         }
     }
+
+    @Override
+    public ArrayList<Lesson> getAllLesson() {
+        try {
+            List<Lesson> lessonList = lessonRepository.findAll();
+            if (!lessonList.isEmpty()) {
+                ArrayList<Lesson> lessonArrayList= new ArrayList<>();
+                for (Lesson l : lessonList) {
+                    lessonArrayList.add(l);
+                }
+                return lessonArrayList;
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }

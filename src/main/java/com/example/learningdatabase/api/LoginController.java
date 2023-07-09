@@ -56,7 +56,7 @@ public class LoginController {
 
     private ArrayList<Account> accountArrayList;
 
-    private int numberID;
+    private int numberID = 0;
 
     @Bean
     public void createData() {
@@ -80,6 +80,7 @@ public class LoginController {
             for (Account acc : accountArrayList) {
                 System.out.println("Input: username = " + username + " & pasword = " + password);
                 if (acc.login(username, password)) {
+                    numberID = acc.getId();
                     System.out.print("Login success! - ");
                     User user = userServiceImplement.getUserByID(acc.getUserid());
                     if (user.getIsAdmin() == true) {
@@ -132,15 +133,6 @@ public class LoginController {
         }
     }
 
-    @PostMapping("/both-login")
-    public String doLogin(@ModelAttribute("studentDTO") StudentDTO studentDTO,
-                          Model model,
-                          @CookieValue(value = "studentDTO",defaultValue = "") StudentDTO studentDTOCookie,
-                          HttpServletRequest request,
-                          HttpServletResponse response) {
-
-        return "";
-    }
 
 
 }

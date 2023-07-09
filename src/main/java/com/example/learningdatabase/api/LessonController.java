@@ -75,8 +75,11 @@ public class LessonController {
         }
     }
 
-//    @GetMapping("/add-lesson")
-//    @ResponseBody
+    @GetMapping("/get-all-lesson")
+    @ResponseBody
+    public ArrayList<Lesson> get_allLesson() {
+        return lessonServiceImplement.getAllLesson();
+    }
 
 
 }

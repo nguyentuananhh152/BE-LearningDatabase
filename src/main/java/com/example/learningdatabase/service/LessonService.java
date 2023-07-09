@@ -17,4 +17,6 @@ public interface LessonService {
     public Lesson getLessonByID(int id);
 
     public ArrayList<Lesson> getListLesson(ArrayList<Integer> listID);
+
+    public ArrayList<Lesson> getAllLesson();
 }

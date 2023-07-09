@@ -44,51 +44,13 @@ public class HomeController {
 //    }
 
 
-    @GetMapping("/studentDTO")
-    @ResponseBody
-    public StudentDTO test() {
-        Account testAcc = accountServiceImplement.getAccountByID(5);
-        User testUser = userServiceImplement.getUserByID(3);
-        Student student = studentServiceImplement.getStudentByID(3);
-        return new StudentDTO(testAcc, testUser, student);
-    }
 
-    @RequestMapping("/test/insert")
-    public void get_insertUser() {
-        User user = new User();
-        user.setId(5);
-        user.setIsAdmin(false);
-        Student student = new Student();
-        studentServiceImplement.saveStudent(student);
-        user.setNumberStudentID(student.getId());
-        userServiceImplement.saveUser(user);
-    }
     @DeleteMapping("/delete-account/{id}")
     public void delete_deleteAccountByID(@PathVariable("id") int id) {
         accountServiceImplement.deleteAccountByID(id);
     }
 
-    @GetMapping("/create-account-default")
-    public void post_createAccountDefault() {
-        Account acc = new Account();
-        acc.setUserName("new Account");
-        acc.setPassword("password");
-        acc.setUserID(0);
-        acc.setEmail("email@gmail.com");
-        acc.setIsLogin(false);
-        accountServiceImplement.saveAccount(acc);
-    }
 
-    @PostMapping("/create-account")
-    public void post_createAccount(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("email") String email) {
-        Account acc = new Account();
-        acc.setUserName(username);
-        acc.setPassword(password);
-        acc.setUserID(0);
-        acc.setEmail(email);
-        acc.setIsLogin(false);
-        accountServiceImplement.saveAccount(acc);
-    }
 
     @GetMapping("/get-all-account")
     @ResponseBody
