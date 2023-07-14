@@ -17,6 +17,7 @@ public class Lesson {
 
     private String Name;
 
+    @Column(columnDefinition = "TEXT")
     private String Content;
 
     private String ListExercise = "[]";

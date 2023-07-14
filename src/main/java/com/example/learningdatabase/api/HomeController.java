@@ -2,6 +2,7 @@ package com.example.learningdatabase.api;
 
 
 import com.example.learningdatabase.entity.Account;
+import com.example.learningdatabase.entity.Course;
 import com.example.learningdatabase.entity.Student;
 import com.example.learningdatabase.entity.User;
 import com.example.learningdatabase.entityDTO.StudentDTO;
@@ -28,6 +29,9 @@ public class HomeController {
     @Autowired
     StudentServiceImplement studentServiceImplement;
 
+    @Autowired
+    private CourseServiceImplement courseServiceImplement;
+
     public HomeController() {}
 
     @RequestMapping("/")
@@ -47,6 +51,7 @@ public class HomeController {
 
     @DeleteMapping("/delete-account/{id}")
     public void delete_deleteAccountByID(@PathVariable("id") int id) {
+        System.out.println("Delete account, id account = " + id);
         accountServiceImplement.deleteAccountByID(id);
     }
 
@@ -55,6 +60,7 @@ public class HomeController {
     @GetMapping("/get-all-account")
     @ResponseBody
     public ArrayList<Account> getlistaccount() {
+        System.out.println("Get all account");
         return accountServiceImplement.getAllListAccount();
     }
 
@@ -63,4 +69,16 @@ public class HomeController {
 //        List<Account> acc = accountServiceImplement.findIDAccountByUsername("hahah");
 //        acc.forEach(a -> System.out.println(a));
 //    }
+    @GetMapping("/search")
+    @ResponseBody
+    public ArrayList<Course> get_search(@RequestParam("keyword") String keyword) {
+        System.out.println("Search, keyword = " + keyword);
+        ArrayList<Course> arr = new ArrayList<>();
+        courseServiceImplement.getAllListCourse().forEach(course -> {
+            if (course.getName().contains(keyword)) {
+                arr.add(course);
+            }
+        });
+        return arr;
+    }
 }

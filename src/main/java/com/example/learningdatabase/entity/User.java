@@ -26,6 +26,25 @@ public class User {
 
     public User() {}
 
+    public User(int numberStudentID, int numberAdminID, String name, String image, int numberAge, String address) {
+        this.numberStudentID = numberStudentID;
+        this.numberAdminID = numberAdminID;
+        Name = name;
+        Image = image;
+        this.numberAge = numberAge;
+        Address = address;
+    }
+
+    public User(int numberStudentID, int numberAdminID, String name, String image, int numberAge, String address, Boolean isAdmin) {
+        this.numberStudentID = numberStudentID;
+        this.numberAdminID = numberAdminID;
+        Name = name;
+        Image = image;
+        this.numberAge = numberAge;
+        Address = address;
+        IsAdmin = isAdmin;
+    }
+
     public int getId() {
         return id;
     }

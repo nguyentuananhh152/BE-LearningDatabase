@@ -1,5 +1,4 @@
 package com.example.learningdatabase.entity;
-
 import javax.persistence.*;
 import lombok.*;
 

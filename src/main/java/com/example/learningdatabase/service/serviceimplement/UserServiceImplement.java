@@ -50,6 +50,15 @@ public class UserServiceImplement implements UserService {
     }
 
     @Override
+    public void deleteAll() {
+        try {
+            userRepository.deleteAll();
+        } catch(Exception e) {
+
+        }
+    }
+
+    @Override
     public boolean exist(int id) {
         if (userRepository.existsById(id)) {
             return true;

@@ -37,7 +37,7 @@ public class AdminServiceImplement implements AdminService {
                 return new Admin();
             }
         } catch (Exception e) {
-            return null;
+            return new Admin();
         }
     }
 

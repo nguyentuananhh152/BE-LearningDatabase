@@ -9,15 +9,14 @@ import java.util.ArrayList;
 public class StudentDTO {
     private int ID;
     private String Username;
-    private String PassWord = "";
     private String Email;
     private String Name;
     private String Image;
     private int numberAge;
     private String Address;
-    private ArrayList<Integer> ListCourseRegistered;
-    private ArrayList<Integer> ListLessonLearned;
-    private ArrayList<Integer> ListExerciseDone;
+//    private ArrayList<Integer> ListCourseRegistered;
+//    private ArrayList<Integer> ListLessonLearned;
+//    private ArrayList<Integer> ListExerciseDone;
 
     public StudentDTO() {}
 
@@ -29,9 +28,9 @@ public class StudentDTO {
         this.Image = user.getImage();
         this.numberAge = user.getNumberAge();
         this.Address = user.getAddress();
-        this.ListCourseRegistered = student.stringToList(student.getListCourseRegistered());
-        this.ListLessonLearned = student.stringToList(student.getListLessonLearned());
-        this.ListExerciseDone = student.stringToList(student.getListExerciseDone());
+//        this.ListCourseRegistered = student.stringToList(student.getListCourseRegistered());
+//        this.ListLessonLearned = student.stringToList(student.getListLessonLearned());
+//        this.ListExerciseDone = student.stringToList(student.getListExerciseDone());
     }
 
     public int getID() {
@@ -62,17 +61,17 @@ public class StudentDTO {
         return Address;
     }
 
-    public ArrayList<Integer> getListCourseRegistered() {
-        return ListCourseRegistered;
-    }
-
-    public ArrayList<Integer> getListLessonLearned() {
-        return ListLessonLearned;
-    }
-
-    public ArrayList<Integer> getListExerciseDone() {
-        return ListExerciseDone;
-    }
+//    public ArrayList<Integer> getListCourseRegistered() {
+//        return ListCourseRegistered;
+//    }
+//
+//    public ArrayList<Integer> getListLessonLearned() {
+//        return ListLessonLearned;
+//    }
+//
+//    public ArrayList<Integer> getListExerciseDone() {
+//        return ListExerciseDone;
+//    }
 
 
 }

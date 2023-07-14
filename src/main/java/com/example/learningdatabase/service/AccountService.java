@@ -17,6 +17,8 @@ public interface AccountService {
     public void updateEmailAccountByID(int id, String email);
     public void changePassword(int id, String oldPass, String newPass);
     public void deleteAccountByID(int id);
+
+    public void deleteAll();
     public boolean exist(int id);
 
     public Account getAccountByID(int id);

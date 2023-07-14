@@ -33,13 +33,10 @@ public class LessonController {
     @GetMapping("/get-lesson")
     @ResponseBody
     public Lesson get_lessonByID(@PathParam("id") int id) {
-        try {
-            if (lessonServiceImplement.exist(id)) {
-                return lessonServiceImplement.getLessonByID(id);
-            } else {
-                return new Lesson();
-            }
-        } catch (Exception e) {
+        System.out.println("Get lesson by id, id lesson = " + id);
+        if (lessonServiceImplement.exist(id)) {
+            return lessonServiceImplement.getLessonByID(id);
+        } else {
             return new Lesson();
         }
     }
@@ -47,14 +44,11 @@ public class LessonController {
     @GetMapping("/get-list-lesson")
     @ResponseBody
     public ArrayList<Lesson> get_listLessonByIDCourse(@PathParam("id") int id) {
-        try {
-            if (courseServiceImplement.exist(id)) {
-                Course course = courseServiceImplement.getCourseByID(id);
-                return lessonServiceImplement.getListLesson(course.stringToList(course.getListLesson()));
-            } else {
-                return new ArrayList<Lesson>();
-            }
-        } catch (Exception e) {
+        System.out.println("Get list lesson, id = " + id);
+        if (courseServiceImplement.exist(id)) {
+            Course course = courseServiceImplement.getCourseByID(id);
+            return lessonServiceImplement.getListLesson(course.stringToList(course.getListLesson()));
+        } else {
             return new ArrayList<Lesson>();
         }
     }
@@ -63,14 +57,11 @@ public class LessonController {
     @GetMapping("/my-list-lesson")
     @ResponseBody
     public ArrayList<Lesson> get_myListLesson(@PathParam("id") int id) {
-        try {
-            if (studentServiceImplement.exist(id)) {
-                Student student = studentServiceImplement.getStudentByID(id);
-                return lessonServiceImplement.getListLesson(student.stringToList(student.getListLessonLearned()));
-            } else {
-                return new ArrayList<Lesson>();
-            }
-        } catch (Exception e) {
+        System.out.println("Get my list lesson, id student = " + id);
+        if (studentServiceImplement.exist(id)) {
+            Student student = studentServiceImplement.getStudentByID(id);
+            return lessonServiceImplement.getListLesson(student.stringToList(student.getListLessonLearned()));
+        } else {
             return new ArrayList<Lesson>();
         }
     }
@@ -78,6 +69,7 @@ public class LessonController {
     @GetMapping("/get-all-lesson")
     @ResponseBody
     public ArrayList<Lesson> get_allLesson() {
+        System.out.println("Get all lesson");
         return lessonServiceImplement.getAllLesson();
     }
 

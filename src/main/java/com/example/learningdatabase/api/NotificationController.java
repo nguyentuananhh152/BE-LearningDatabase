@@ -38,7 +38,7 @@ public class NotificationController {
 
     @DeleteMapping("/delete/notification")
     public void DELETE_notificationByid(@PathParam("id") int id) {
-        System.out.println("Delete notification by id: " + id);
+        System.out.println("Delete notification, id notification = " + id);
 //        if (!notificationServiceImplement.exist(id)) {
 //            System.out.println("Notification " + id + "not exist!");
 //        }

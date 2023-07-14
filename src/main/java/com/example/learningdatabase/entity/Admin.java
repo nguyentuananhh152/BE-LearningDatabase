@@ -13,6 +13,11 @@ public class Admin {
     public Admin() {
     }
 
+    public Admin(int id) {
+        ID = id;
+    }
+
+
     public int getId() {
         return ID;
     }

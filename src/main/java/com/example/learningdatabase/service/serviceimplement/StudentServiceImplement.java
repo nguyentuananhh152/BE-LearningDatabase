@@ -46,6 +46,14 @@ public class StudentServiceImplement implements StudentService {
     }
 
     @Override
+    public void deleteAll() {
+        try {
+            studentRepository.deleteAll();
+        } catch(Exception e) {
+        }
+    }
+
+    @Override
     public boolean exist(int id) {
         if (studentRepository.existsById(id)) {
             return true;

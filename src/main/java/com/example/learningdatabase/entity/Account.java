@@ -6,12 +6,10 @@ import java.io.Serializable;
 
 @Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id",  nullable = false, unique = true, length = 5)
+//    @Column(name = "id",  nullable = false, unique = true, length = 5)
     private int ID;
 
     @Column (name = "username", nullable = false, unique = true, length = 50)
@@ -31,13 +29,18 @@ public class Account {
     @Column (name = "email", length = 50)
     private String Email;
 
-    @Column (name = "isLogin", nullable = false)
-    private Boolean IsLogin;
+    @Column (name = "isLogin")
+    private Boolean IsLogin = false;
 
-    public Account(String userName, String passWord) {
+    public Account() {}
+
+    public Account(String userName, String passWord, int userID, String email) {
         this.userName = userName;
         this.passWord = passWord;
+        UserID = userID;
+        Email = email;
     }
+
     public int getId() {
         return ID;
     }

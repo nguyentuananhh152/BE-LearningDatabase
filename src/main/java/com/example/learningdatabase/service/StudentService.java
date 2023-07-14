@@ -10,6 +10,7 @@ public interface StudentService {
     public Student saveStudent(Student student);
 
     public void deleteStudentByID(int id);
+    public void deleteAll();
     public boolean exist(int id);
 
     public ArrayList<Integer> getListCourseRegistered(int idStudent);

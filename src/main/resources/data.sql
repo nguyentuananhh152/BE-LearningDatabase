@@ -218,8 +218,13 @@ values
 insert into course
 (id, name, image, description, list_lesson)
 values
-('1', 'Basic database', 'https://gisgeography.com/wp-content/uploads/2021/12/Learn-SQL-Online-Courses.png', 'This course contains lessons that will help you learn simple query statements', '[1 ,2 ,3 ,4 ,5 ,6 ,7 ,8 ,9 ,10 ,11 ,12 ,13 ,14 ,15 ,16 ,17 ,18 ,19 ,20 ,21 ,22 ,23 ,24 ,25 ,26 ,27 ,28 ,29 ,30 ,31 ,32 ,33 ,34 ,35 ,36 ,37 ,38 ,39 ,40 ,41 ,42 ,43 ,44 ,45 ,46 ,47 ,48 ,49 ,50]'),
-('2', 'Advanced database', 'https://player.slideplayer.com/66/11885459/slides/slide_1.jpg', 'This course contains lessons that will help you learn advanced queries', '[51 ,52 ,53 ,54 ,55 ,56 ,57 ,58 ,59 ,60 ,61 ,62 ,63 ,64 ,65 ,66 ,67 ,68 ,69 ,70 ,71 ,72 ,73 ,74 ,75 ,76 ,77 ,78 ,79 ,80 ,81 ,82 ,83 ,84 ,85 ,86 ,87 ,88 ,89 ,90 ,91 ,92 ,93 ,94 ,95 ,96 ,97 ,98 ,99 ,100]')
+('1', 'Basic database', 'https://gisgeography.com/wp-content/uploads/2021/12/Learn-SQL-Online-Courses.png', 'This course contains lessons that will help you learn simple query statements', '[1 ,2 ,3 ,4 ,5 ,6 ,7 ,8 ,9 ,10 ,11 ,12 ,13 ,14 ,15 ,16 ,17 ,18 ,19 ,20 ,21 ,22 ,23]'),
+('2', 'Advanced database', 'https://player.slideplayer.com/66/11885459/slides/slide_1.jpg', 'This course contains lessons that will help you learn advanced queries', '[24 ,25 ,26 ,27 ,28 ,29 ,30 ,31 ,32 ,33 ,34 ,35 ,36 ,37 ,38 ,39 ,40 ,41 ,42 ,43 ,44 ,45]'),
+('3', 'C++', 'https://source.vn/wp-content/uploads/2020/08/lap-trinh-c-cong-cong-hieu-qua-3-4.png', 'C++ tutorial', '[46, 47, 48, 49, 50, 51 ,52 ,53 ,54 ,55]'),
+('4', 'Python', 'https://mifago.com/wp-content/uploads/2021/05/python-programming-language.png', 'Python tutorial', '[56 ,57 ,58 ,59 ,60 ,61 ,62 ,63 ,64 ,65 ,66]'),
+('5', 'Java', 'https://1.bp.blogspot.com/-mBmFaEm8z8M/Xg9WX1Gk0aI/AAAAAAAAAhM/69CpJZ1nHjonwzAeR-AkoX_4C6t9tGXKACLcBGAsYHQ/s1600/dark-days-oracle-kills-java-plug-in-dead-showcase_image-9-p-2047.jpg', 'Java tutorial', '[67 ,68 ,69 ,70 ,71 ,72 ,73 ,74 ,75 ,76 ,77 ,78 ,79]'),
+('6', 'ReactJS', 'https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_1e0d62f445e6448af1e125f5702c8227/reactjs-development-services.png', 'ReactJS tutorial', '[80 ,81 ,82 ,83 ,84 ,85 ,86 ,87 ,88 ,89 ,90]'),
+('7', '.NET', 'https://fsoft-academy.edu.vn/wp-content/uploads/2021/11/dotnet_round-768x369.png ', '.NET tutorial', '[91 ,92 ,93 ,94 ,95 ,96 ,97 ,98 ,99 ,100]')
 
 ----------------------------------------------------------------------
 insert into exercise
@@ -330,106 +335,103 @@ values
 insert into lesson
 (id, name, content, list_exercise, list_comment)
 values
-('1', 'lesson 1', 'Learn query 1', '[46 ,41 ,36 ,35 ,95]', '[87 ,60 ,46 ,68 ,62]'),
-('2', 'lesson 2', 'Learn query 2', '[32 ,2 ,43 ,11 ,3]', '[58]'),
-('3', 'lesson 3', 'Learn query 3', '[28 ,31 ,37 ,20 ,46 ,25 ,56 ,6 ,11 ,99]', '[27 ,13 ,51 ,70 ,8]'),
-('4', 'lesson 4', 'Learn query 4', '[72 ,73 ,70 ,60 ,29 ,14 ,61 ,4]', '[73 ,43 ,96 ,52]'),
-('5', 'lesson 5', 'Learn query 5', '[31 ,29 ,63 ,55 ,98 ,42]', '[19 ,14 ,5 ,51]'),
-('6', 'lesson 6', 'Learn query 6', '[84 ,97 ,64 ,53 ,35 ,74 ,81 ,8]', '[15]'),
-('7', 'lesson 7', 'Learn query 7', '[15 ,79 ,43 ,46 ,14 ,11 ,66]', '[90 ,67 ,15 ,29]'),
-('8', 'lesson 8', 'Learn query 8', '[64 ,92 ,10]', '[27 ,96 ,5 ,71]'),
-('9', 'lesson 9', 'Learn query 9', '[2 ,45 ,54 ,93 ,74 ,60]', '[35 ,80 ,19 ,81]'),
-('10', 'lesson 10', 'Learn query 10', '[22 ,72 ,26 ,42 ,13 ,54]', '[56 ,77 ,86 ,75 ,79]'),
-('11', 'lesson 11', 'Learn query 11', '[91]', '[40 ,20]'),
-('12', 'lesson 12', 'Learn query 12', '[3 ,25 ,63]', '[96 ,39 ,74 ,90 ,76]'),
-('13', 'lesson 13', 'Learn query 13', '[93 ,51 ,5]', '[15 ,24]'),
-('14', 'lesson 14', 'Learn query 14', '[40 ,96 ,49 ,75 ,47 ,71 ,36 ,55 ,56 ,53]', '[48]'),
-('15', 'lesson 15', 'Learn query 15', '[51 ,28 ,75 ,99 ,69 ,58 ,7 ,73]', '[16]'),
-('16', 'lesson 16', 'Learn query 16', '[13 ,2 ,9 ,94 ,12]', '[79 ,76 ,73]'),
-('17', 'lesson 17', 'Learn query 17', '[60 ,14 ,11 ,92 ,24 ,46 ,82 ,65]', '[42 ,19 ,57 ,77]'),
-('18', 'lesson 18', 'Learn query 18', '[51 ,55]', '[46 ,72 ,33 ,40 ,7]'),
-('19', 'lesson 19', 'Learn query 19', '[76 ,64 ,48 ,45 ,65 ,43 ,42 ,11]', '[15 ,22 ,58]'),
-('20', 'lesson 20', 'Learn query 20', '[78 ,70 ,28 ,12 ,82 ,1 ,50 ,19 ,87 ,26]', '[43 ,80 ,97 ,46 ,36]'),
-('21', 'lesson 21', 'Learn query 21', '[39]', '[48 ,1 ,39]'),
-('22', 'lesson 22', 'Learn query 22', '[22 ,48 ,12 ,15 ,13 ,58 ,11 ,93 ,65]', '[87]'),
-('23', 'lesson 23', 'Learn query 23', '[2 ,33 ,79 ,89 ,12 ,4 ,93 ,66 ,55]', '[6 ,37]'),
-('24', 'lesson 24', 'Learn query 24', '[21 ,37 ,23]', '[17]'),
-('25', 'lesson 25', 'Learn query 25', '[86 ,53 ,31 ,8 ,19 ,56 ,22 ,92 ,48]', '[34 ,13 ,35 ,64]'),
-('26', 'lesson 26', 'Learn query 26', '[75]', '[35 ,83 ,80 ,93 ,31]'),
-('27', 'lesson 27', 'Learn query 27', '[81 ,10 ,25]', '[68 ,97]'),
-('28', 'lesson 28', 'Learn query 28', '[57 ,95 ,71 ,84 ,48 ,61 ,76 ,11]', '[47 ,62 ,98 ,5]'),
-('29', 'lesson 29', 'Learn query 29', '[34 ,74 ,43]', '[58 ,66 ,89 ,54 ,86]'),
-('30', 'lesson 30', 'Learn query 30', '[63]', '[49 ,63]'),
-('31', 'lesson 31', 'Learn query 31', '[14 ,27 ,25 ,58 ,5 ,10 ,42]', '[6 ,96 ,85 ,90]'),
-('32', 'lesson 32', 'Learn query 32', '[3 ,84]', '[65 ,15 ,90]'),
-('33', 'lesson 33', 'Learn query 33', '[91 ,6 ,69 ,89 ,92 ,88]', '[96 ,1 ,19 ,67 ,85]'),
-('34', 'lesson 34', 'Learn query 34', '[59 ,36 ,33]', '[55 ,20 ,8 ,45 ,28]'),
-('35', 'lesson 35', 'Learn query 35', '[10]', '[31]'),
-('36', 'lesson 36', 'Learn query 36', '[56 ,33 ,65]', '[22 ,13 ,18]'),
-('37', 'lesson 37', 'Learn query 37', '[57 ,43 ,6 ,91 ,27 ,74 ,11 ,73 ,84]', '[26 ,74 ,44 ,93 ,53]'),
-('38', 'lesson 38', 'Learn query 38', '[78 ,23 ,14 ,33 ,20 ,11]', '[86 ,94 ,44]'),
-('39', 'lesson 39', 'Learn query 39', '[15 ,73 ,35]', '[25 ,21]'),
-('40', 'lesson 40', 'Learn query 40', '[63 ,21 ,68 ,85 ,8 ,49]', '[39 ,61 ,58]'),
-('41', 'lesson 41', 'Learn query 41', '[9]', '[37 ,41]'),
-('42', 'lesson 42', 'Learn query 42', '[76 ,41 ,84 ,25 ,96 ,75 ,50]', '[54]'),
-('43', 'lesson 43', 'Learn query 43', '[26 ,58 ,13 ,61 ,43]', '[44 ,88 ,98]'),
-('44', 'lesson 44', 'Learn query 44', '[85 ,27 ,43 ,81]', '[95]'),
-('45', 'lesson 45', 'Learn query 45', '[19 ,22]', '[5 ,76 ,12 ,63]'),
-('46', 'lesson 46', 'Learn query 46', '[48]', '[61 ,58 ,69 ,23 ,71]'),
-('47', 'lesson 47', 'Learn query 47', '[40 ,52 ,63]', '[41 ,67 ,48 ,83 ,69]'),
-('48', 'lesson 48', 'Learn query 48', '[31 ,53 ,3 ,2]', '[52 ,27 ,38 ,13]'),
-('49', 'lesson 49', 'Learn query 49', '[50 ,66 ,18 ,63 ,89 ,13]', '[81 ,55 ,15 ,59 ,93]'),
-('50', 'lesson 50', 'Learn query 50', '[73 ,12 ,45 ,42 ,99 ,20 ,29 ,40]', '[64 ,68 ,97]'),
-('51', 'lesson 51', 'Learn query 51', '[8 ,27 ,75 ,94 ,99 ,5 ,6 ,7 ,61 ,45]', '[28 ,78 ,38 ,50]'),
-('52', 'lesson 52', 'Learn query 52', '[66 ,79 ,72 ,20 ,90 ,96 ,60 ,48 ,18]', '[58 ,10 ,15 ,61 ,18]'),
-('53', 'lesson 53', 'Learn query 53', '[9 ,3 ,57 ,4 ,22]', '[59]'),
-('54', 'lesson 54', 'Learn query 54', '[23]', '[79 ,19 ,54 ,23 ,82]'),
-('55', 'lesson 55', 'Learn query 55', '[53 ,65 ,76 ,98 ,12 ,13 ,88 ,75 ,38 ,22]', '[27]'),
-('56', 'lesson 56', 'Learn query 56', '[1 ,8 ,32 ,37 ,16 ,53 ,57 ,80]', '[65 ,54 ,46 ,67]'),
-('57', 'lesson 57', 'Learn query 57', '[68 ,60]', '[21 ,87]'),
-('58', 'lesson 58', 'Learn query 58', '[97]', '[5 ,73 ,62]'),
-('59', 'lesson 59', 'Learn query 59', '[1 ,16 ,39 ,68 ,60 ,87 ,94 ,20]', '[16 ,68 ,88]'),
-('60', 'lesson 60', 'Learn query 60', '[19 ,92 ,75 ,64 ,60 ,12 ,94 ,88 ,29]', '[26]'),
-('61', 'lesson 61', 'Learn query 61', '[69 ,89 ,11 ,98 ,39 ,33 ,60 ,64]', '[26 ,6]'),
-('62', 'lesson 62', 'Learn query 62', '[64 ,72 ,59 ,85 ,79 ,51 ,2 ,45 ,30]', '[65]'),
-('63', 'lesson 63', 'Learn query 63', '[53 ,46 ,12 ,8 ,15 ,1 ,35 ,84 ,78]', '[86 ,6]'),
-('64', 'lesson 64', 'Learn query 64', '[18 ,22 ,97 ,74]', '[63 ,47 ,96 ,49]'),
-('65', 'lesson 65', 'Learn query 65', '[62 ,29]', '[69 ,92 ,51]'),
-('66', 'lesson 66', 'Learn query 66', '[4 ,27 ,5 ,39 ,99 ,15 ,24 ,36]', '[9 ,52 ,21]'),
-('67', 'lesson 67', 'Learn query 67', '[37 ,50 ,38 ,60 ,63 ,54 ,48 ,51 ,66 ,25]', '[41 ,76]'),
-('68', 'lesson 68', 'Learn query 68', '[94 ,76 ,24 ,65 ,55 ,16]', '[60]'),
-('69', 'lesson 69', 'Learn query 69', '[10 ,1 ,33 ,52 ,56 ,93]', '[2 ,9]'),
-('70', 'lesson 70', 'Learn query 70', '[59]', '[89 ,18 ,25]'),
-('71', 'lesson 71', 'Learn query 71', '[9 ,78 ,70 ,23 ,97 ,86 ,62]', '[86 ,66 ,96]'),
-('72', 'lesson 72', 'Learn query 72', '[44 ,77 ,98 ,40 ,58]', '[69]'),
-('73', 'lesson 73', 'Learn query 73', '[96 ,97 ,95 ,98 ,52 ,41 ,40 ,30]', '[58 ,49 ,48]'),
-('74', 'lesson 74', 'Learn query 74', '[1 ,90 ,40 ,85]', '[89 ,94 ,71 ,20 ,98]'),
-('75', 'lesson 75', 'Learn query 75', '[93 ,61 ,12 ,51]', '[83]'),
-('76', 'lesson 76', 'Learn query 76', '[39 ,77 ,82 ,18 ,91 ,79 ,74 ,38]', '[43]'),
-('77', 'lesson 77', 'Learn query 77', '[80 ,4 ,76 ,29 ,23 ,25 ,66]', '[33 ,12 ,14]'),
-('78', 'lesson 78', 'Learn query 78', '[94 ,71]', '[63]'),
-('79', 'lesson 79', 'Learn query 79', '[61 ,67 ,69 ,23 ,77 ,3]', '[34 ,19 ,51 ,67 ,43]'),
-('80', 'lesson 80', 'Learn query 80', '[80 ,64 ,84 ,81 ,23 ,97 ,19 ,74]', '[71 ,95]'),
-('81', 'lesson 81', 'Learn query 81', '[38 ,39 ,9 ,67 ,14 ,93 ,19]', '[27 ,37 ,20]'),
-('82', 'lesson 82', 'Learn query 82', '[53 ,64 ,23 ,32]', '[99 ,16 ,97]'),
-('83', 'lesson 83', 'Learn query 83', '[86 ,42 ,5 ,90 ,30]', '[35 ,64 ,88]'),
-('84', 'lesson 84', 'Learn query 84', '[26]', '[81]'),
-('85', 'lesson 85', 'Learn query 85', '[1 ,6 ,28 ,30 ,53 ,40 ,5 ,22 ,42]', '[93 ,32 ,38 ,96]'),
-('86', 'lesson 86', 'Learn query 86', '[19 ,40 ,66 ,77 ,62 ,82 ,24]', '[4 ,33 ,11 ,93]'),
-('87', 'lesson 87', 'Learn query 87', '[47 ,76 ,61 ,57 ,91 ,20 ,9 ,90 ,8]', '[16]'),
-('88', 'lesson 88', 'Learn query 88', '[57 ,72 ,63 ,26 ,48]', '[88 ,46]'),
-('89', 'lesson 89', 'Learn query 89', '[33 ,27 ,18 ,56]', '[69 ,93 ,66 ,65 ,17]'),
-('90', 'lesson 90', 'Learn query 90', '[32 ,14]', '[51 ,14 ,12]'),
-('91', 'lesson 91', 'Learn query 91', '[42]', '[36]'),
-('92', 'lesson 92', 'Learn query 92', '[98]', '[21 ,54 ,53 ,19]'),
-('93', 'lesson 93', 'Learn query 93', '[52 ,3 ,44]', '[41]'),
-('94', 'lesson 94', 'Learn query 94', '[13 ,90 ,30 ,84 ,56 ,81 ,33 ,68 ,76 ,42]', '[44 ,66 ,14 ,84 ,73]'),
-('95', 'lesson 95', 'Learn query 95', '[83 ,98 ,87 ,65 ,21 ,78 ,3]', '[38]'),
-('96', 'lesson 96', 'Learn query 96', '[52]', '[35 ,76 ,29 ,95]'),
-('97', 'lesson 97', 'Learn query 97', '[53]', '[30 ,40]'),
-('98', 'lesson 98', 'Learn query 98', '[16 ,28 ,51 ,70 ,39 ,54]', '[49]'),
-('99', 'lesson 99', 'Learn query 99', '[86 ,79 ,42 ,8 ,73 ,19 ,15 ,44 ,6 ,32]', '[38]'),
-('100', 'lesson 100', 'Learn query 100', '[37 ,38 ,10 ,49 ,14 ,40 ,80 ,59 ,58]', '[38]')
+('1', 'SQL là gì?', 'SQL là viết tắt của Structured Query Language có nghĩa là ngôn ngữ truy vấn có cấu trúc, là một ngôn ngữ máy tính để lưu trữ, thao tác và truy xuất dữ liệu được lưu trữ trong một cơ sở dữ liệu quan hệ.
+                     SQL là ngôn ngữ chuẩn cho hệ cơ sở dữ liệu quan hệ. Tất cả các hệ thống quản lý cơ sở dữ liệu quan hệ (RDMS) như MySQL, MS Access, Oracle, Sybase, Informix, Postgres và SQL Server đều sử dụng SQL làm ngôn ngữ cơ sở dữ liệu chuẩn.', '[46 ,41 ,36 ,35 ,95]', '[87 ,60 ,46 ,68 ,62]'),
+('2', 'RDBMS là gì?', 'RDBMS là viết tắt của Relational Database Management System có nghĩa là hệ quản trị cơ sỡ dữ liệu quan hệ. RDBMS là cơ sở cho SQL, và cho tất cả các hệ thống cơ sở dữ liệu hiện đại như MS SQL Server, IBM DB2, Oracle, MySQL và Microsoft Access.
+
+                       Hệ thống quản lý cơ sở dữ liệu quan hệ (RDBMS) là một hệ thống quản lý cơ sở dữ liệu (DBMS) dựa trên mô hình quan hệ được giới thiệu bởi EF Codd.', '[32 ,2 ,43 ,11 ,3]', '[58]'),
+('3', 'Các hệ quản trị cơ sở dữ liệu', 'Hiện nay, có rất nhiều RDBMS - hệ quản trị cơ sở dữ liệu phổ biến có sẵn để làm việc. Hướng dẫn này đưa ra một cái nhìn ngắn gọn về một số các RDBMS phổ biến nhất. Điều này sẽ giúp bạn so sánh các tính năng cơ bản của chúng.', '[28 ,31 ,37 ,20 ,46 ,25 ,56 ,6 ,11 ,99]', '[27 ,13 ,51 ,70 ,8]'),
+('4', 'Cú pháp SQL', 'Hướng dẫn này cung cấp cho bạn một sự khởi đầu nhanh với SQL bằng cách liệt kê tất cả cú pháp SQL cơ bản.
+                      Tất cả các câu lệnh SQL bắt đầu bằng bất kỳ từ khoá nào như SELECT, INSERT, UPDATE, DELETE, ALTER, DROP, CREATE, USE, SHOW và tất cả các câu kết thúc bằng dấu chấm phẩy (;).
+                      Điểm quan trọng nhất cần lưu ý ở đây là SQL không phân biệt chữ hoa và chữ thường, có nghĩa là SELECT và select có cùng ý nghĩa trong câu lệnh SQL. Trong khi đó, MySQL có sự khác biệt trong tên bảng. Vì vậy, nếu bạn làm việc với MySQL thì bạn cần phải khai báo tên bảng như tên của nó trong cơ sở dữ liệu.', '[72 ,73 ,70 ,60 ,29 ,14 ,61 ,4]', '[73 ,43 ,96 ,52]'),
+('5', 'Kiểu dữ liệu trong SQL', 'Learn query 5', '[31 ,29 ,63 ,55 ,98 ,42]', '[19 ,14 ,5 ,51]'),
+('6', 'Toán tử trong SQL', 'Learn query 6', '[84 ,97 ,64 ,53 ,35 ,74 ,81 ,8]', '[15]'),
+('7', 'Biểu thức trong SQL', 'SELECT column1, column2, columnN FROM table_name WHERE [CONDITION|EXPRESSION];', '[15 ,79 ,43 ,46 ,14 ,11 ,66]', '[90 ,67 ,15 ,29]'),
+('8', 'Create Database trong SQL', 'CREATE DATABASE DatabaseName;', '[64 ,92 ,10]', '[27 ,96 ,5 ,71]'),
+('9', 'Drop Database trong SQL', 'DROP DATABASE DatabaseName;', '[2 ,45 ,54 ,93 ,74 ,60]', '[35 ,80 ,19 ,81]'),
+('10', 'Select Database trong SQL', 'USE DatabaseName; SHOW DATABASES;', '[22 ,72 ,26 ,42 ,13 ,54]', '[56 ,77 ,86 ,75 ,79]'),
+('11', 'Create Table trong SQL', 'CREATE TABLE table_name (columnN datatype PRIMARY KEY( one or more columns ));', '[91]', '[40 ,20]'),
+('12', 'Drop Table trong SQL', 'DROP TABLE table_name;', '[3 ,25 ,63]', '[96 ,39 ,74 ,90 ,76]'),
+('13', 'Câu lệnh INSERT trong SQL', 'INSERT INTO TABLE_NAME VALUES (value1,value2,value3,...valueN);', '[93 ,51 ,5]', '[15 ,24]'),
+('14', 'Câu lệnh Select trong SQL', 'SELECT * FROM table_name;', '[40 ,96 ,49 ,75 ,47 ,71 ,36 ,55 ,56 ,53]', '[48]'),
+('15', 'Mệnh đề WHERE trong SQL', 'SELECT column1, column2, columnN FROM table_name WHERE [condition', '[51 ,28 ,75 ,99 ,69 ,58 ,7 ,73]', '[16]'),
+('16', 'Câu lệnh UPDATE trong SQL', 'UPDATE table_name SET column1 = value1, column2 = value2...., columnN = valueN WHERE [condition];', '[13 ,2 ,9 ,94 ,12]', '[79 ,76 ,73]'),
+('17', 'Câu lệnh DELETE trong SQL', 'DELETE FROM table_name WHERE [condition];', '[60 ,14 ,11 ,92 ,24 ,46 ,82 ,65]', '[42 ,19 ,57 ,77]'),
+('18', 'Mệnh đề LIKE trong SQL', 'SELECT FROM table_name  WHERE column LIKE `XXXX%`or SELECT FROM table_name', '[51 ,55]', '[46 ,72 ,33 ,40 ,7]'),
+('19', 'Mệnh đề TOP trong SQL', 'SELECT TOP number|percent column_name(s)
+                                 FROM table_name
+                                 WHERE [condition]', '[76 ,64 ,48 ,45 ,65 ,43 ,42 ,11]', '[15 ,22 ,58]'),
+('20', 'Mệnh đề ORDER BY trong SQL', 'SELECT column-list
+                                      FROM table_name
+                                      [WHERE condition]
+                                      [ORDER BY column1, column2, .. columnN] [ASC | DESC];', '[78 ,70 ,28 ,12 ,82 ,1 ,50 ,19 ,87 ,26]', '[43 ,80 ,97 ,46 ,36]'),
+('21', 'Mệnh đề GROUP BY trong SQL', 'SELECT column1, column2
+                                      FROM table_name
+                                      WHERE [ conditions ]
+                                      GROUP BY column1, column2
+                                      ORDER BY column1, column2', '[39]', '[48 ,1 ,39]'),
+('22', 'Từ khóa DISTINCT trong SQL', 'SELECT DISTINCT column1, column2,.....columnN
+                     FROM table_name
+                     WHERE [condition]', '[22 ,48 ,12 ,15 ,13 ,58 ,11 ,93 ,65]', '[87]'),
+('23', 'Ràng buộc trong SQL', 'Ràng buộc (Constraint) là các quy tắc được áp dụng trên các cột dữ liệu của một bảng.', '[2 ,33 ,79 ,89 ,12 ,4 ,93 ,66 ,55]', '[6 ,37]'),
+('24', 'Mệnh đề JOIN trong SQL', 'Mệnh đề JOIN trong SQL được sử dụng để kết hợp các bản ghi từ hai hay nhiều bảng trong cơ sở dữ liệu', '[21 ,37 ,23]', '[17]'),
+('25', 'Inner Join trong SQL', 'SELECT table1.column1, table2.column2...
+                                FROM table1
+                                INNER JOIN table2
+                                ON table1.common_field = table2.common_field;', '[86 ,53 ,31 ,8 ,19 ,56 ,22 ,92 ,48]', '[34 ,13 ,35 ,64]'),
+('26', 'Right Join trong SQL', 'SELECT table1.column1, table2.column2...
+                                FROM table1
+                                RIGHT JOIN table2
+                                ON table1.common_field = table2.common_field;', '[75]', '[35 ,83 ,80 ,93 ,31]'),
+('27', 'Left Join trong SQL', 'SELECT table1.column1, table2.column2...
+                               FROM table1
+                               LEFT JOIN table2
+                               ON table1.common_field = table2.common_field;', '[81 ,10 ,25]', '[68 ,97]'),
+('28', 'Full Join trong SQL', 'SELECT table1.column1, table2.column2...
+                               FROM table1
+                               FULL JOIN table2
+                               ON table1.common_field = table2.common_field;', '[57 ,95 ,71 ,84 ,48 ,61 ,76 ,11]', '[47 ,62 ,98 ,5]'),
+('29', 'Self Join trong SQL', 'SELECT a.column_name, b.column_name...
+                               FROM table1 a, table1 b
+                               WHERE a.common_field = b.common_field;', '[34 ,74 ,43]', '[58 ,66 ,89 ,54 ,86]'),
+('30', 'Mệnh đề UNION trong SQL', 'SELECT column1 [, column2 ]
+                                   FROM table1 [, table2 ]
+                                   [WHERE condition]UNIONSELECT column1 [, column2 ]
+                                   FROM table1 [, table2 ]
+                                   [WHERE condition]', '[63]', '[49 ,63]'),
+('31', 'Giá trị NULL trong SQL', 'Cú pháp cơ bản của NULL trong khi tạo một bảng:
+                                     CREATE TABLE CUSTOMERS(
+                                     ID   INT              NOT NULL,
+                                     NAME VARCHAR (20)     NOT NULL,
+                                     AGE  INT              NOT NULL,
+                                     ADDRESS  CHAR (25) ,
+                                     SALARY   DECIMAL (18, 2),
+                                     PRIMARY KEY (ID)
+                                  );', '[14 ,27 ,25 ,58 ,5 ,10 ,42]', '[6 ,96 ,85 ,90]'),
+('32', 'Alias trong SQL', 'Cú pháp cơ bản của một bí danh bảng:
+SELECT column1, column2....
+FROM table_name AS alias_name
+WHERE [condition];
+Cú pháp cơ bản của một bí danh cột:
+SELECT column_name AS alias_name
+FROM table_name
+WHERE [condition];', '[3 ,84]', '[65 ,15 ,90]'),
+('33', 'Index trong SQL', 'CREATE INDEX index_name ON table_name;', '[91 ,6 ,69 ,89 ,92 ,88]', '[96 ,1 ,19 ,67 ,85]'),
+('34', 'Lệnh ALTER TABLE trong SQL', 'ALTER TABLE table_name ADD column_name datatype;', '[59 ,36 ,33]', '[55 ,20 ,8 ,45 ,28]'),
+('35', 'Lệnh TRUNCATE TABLE trong SQL', 'Lệnh TRUNCATE TABLE trong SQL được sử dụng để xóa hoàn toàn dữ liệu từ một bảng hiện có:
+TRUNCATE TABLE  table_name;', '[10]', '[31]'),
+('36', 'Sử dụng VIEW trong SQL', 'Trong SQL, một View là một bảng thực dựa trên tập kết quả của một câu lệnh SQL, một View chứa các hàng và các cột như một bảng thực. Các trường trong View là các trường của một hoặc nhiều bảng trong database.', '[56 ,33 ,65]', '[22 ,13 ,18]'),
+('37', 'Mệnh đề HAVING trong SQL', 'Mệnh đề HAVING trong SQL cho phép bạn chỉ định điều kiện lọc mà kết quả nhóm xuất hiện trong kết quả. ', '[57 ,43 ,6 ,91 ,27 ,74 ,11 ,73 ,84]', '[26 ,74 ,44 ,93 ,53]'),
+('38', 'Transaction trong SQL', 'Nếu một transaction được thực hiện thành công, tất cả các thay đổi dữ liệu được thực hiện trong transaction được lưu vào cơ sở dữ liệu. Nếu một transaction bị lỗi và được rollback, thì tất cả các sửa đổi dữ liệu sẽ bị xóa', '[78 ,23 ,14 ,33 ,20 ,11]', '[86 ,94 ,44]'),
+('39', 'Ký tự đại diện trong SQL', 'Wildcard hay ký tự đại diện trong SQL. Chúng ta đã thảo luận về toán tử LIKE trong SQL, được sử dụng để so sánh một giá trị với các giá trị tương tự sử dụng các toán tử đại diện (wildcard).', '[15 ,73 ,35]', '[25 ,21]'),
+('40', 'Xử lý Date trong SQL', 'Tham khảo thêm: https://viettuts.vn/sql/xu-ly-date-trong-sql', '[63 ,21 ,68 ,85 ,8 ,49]', '[39 ,61 ,58]'),
+('41', 'Bảng tạm trong SQL', 'Các bảng tạm là một tính năng tuyệt vời cho phép bạn lưu trữ và xử lý kết quả trung gian bằng cách sử dụng cùng một lựa chọn, cập nhật và tham gia các tính năng mà bạn có thể sử dụng với các bảng SQL Server điển hình.', '[9]', '[37 ,41]'),
+('42', 'Clone table trong SQL', 'Có thể có một tình huống khi bạn cần bản sao chính xác của bảng và tạo bảng bằng lệnh CREATE TABLE ... hoặc các lệnh SELECT ... không phù hợp với mục đích của bạn vì bản sao phải bao gồm các chỉ mục, giá trị mặc định', '[76 ,41 ,84 ,25 ,96 ,75 ,50]', '[54]'),
+('43', 'Sub query trong SQL', 'Sub query trong SQL hoặc truy vấn nội bộ hoặc truy vấn Nested là truy vấn trong một truy vấn SQL khác và được nhúng trong mệnh đề WHERE.', '[26 ,58 ,13 ,61 ,43]', '[44 ,88 ,98]'),
+('44', 'Sequence trong SQL', 'Một sequence trong SQL là một tập các số nguyên 1, 2, 3, ... được tạo theo thứ tự theo yêu cầu. Các sequence thường được sử dụng trong cơ sở dữ liệu vì nhiều ứng dụng đòi hỏi mỗi hàng trong một bảng chứa một giá trị duy nhất và sequence cung cấp một cách dễ dàng đáp ứng yêu cầu này.', '[85 ,27 ,43 ,81]', '[95]'),
+('45', 'Xử lý duplicate trong SQL', 'SELECT DISTINCT column1, column2,.....columnN
+                                     FROM table_name
+                                     WHERE [condition]', '[19 ,22]', '[5 ,76 ,12 ,63]')
 
 ----------------------------------------------------------------------
 insert into notification

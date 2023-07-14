@@ -38,15 +38,22 @@ public class AccountServiceImplement implements AccountService {
 
     @Override
     public Account saveAccount(Account account) {
+//        try {
+//            if (!accountRepository.existsById(account.getId())) {
+//                accountRepository.save(account);
+//                return account;
+//            } else {
+//                return null;
+//            }
+//        } catch (Exception e) {
+//            return null;
+//        }
         try {
-            if (!accountRepository.existsById(account.getId())) {
-                accountRepository.save(account);
-                return account;
-            } else {
-                return null;
-            }
+            return accountRepository.save(account);
         } catch (Exception e) {
-            return null;
+            System.out.println("Error when save Account!!");
+            System.out.println(e.getMessage());
+            return new Account();
         }
     }
 
@@ -83,6 +90,15 @@ public class AccountServiceImplement implements AccountService {
                 accountRepository.deleteById(id);
             }
         } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public void deleteAll() {
+        try {
+            accountRepository.deleteAll();
+        } catch(Exception e) {
+
         }
     }
 
