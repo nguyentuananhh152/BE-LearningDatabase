@@ -130,7 +130,7 @@ public class AccountServiceImplement implements AccountService {
         try {
             ArrayList<Account> arr = new ArrayList<>();
             accountRepository.findAll().forEach(account -> {
-//                account.setPassword("");
+                account.setPassword("");
                 arr.add(account);
             });
             return arr;

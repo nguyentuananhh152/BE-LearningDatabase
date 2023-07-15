@@ -437,10 +437,10 @@ TRUNCATE TABLE  table_name;', '[10]', '[31]'),
 insert into notification
 (id, content)
 values
-('1', 'Notification 1'),
-('2', 'Notification 2'),
-('3', 'Notification 3'),
-('4', 'Notification 4'),
+('1', 'Thông báo mở khóa học ReactJS'),
+('2', 'Mở chức năng đăng ký khóa học'),
+('3', 'Thêm 2 khóa học mới'),
+('4', 'Cập nhật điều khoản và chính sách'),
 ('5', 'Notification 5'),
 ('6', 'Notification 6'),
 ('7', 'Notification 7'),
